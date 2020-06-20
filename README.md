@@ -1,4 +1,4 @@
 # VirtualClassroom
 
-npm install
-node Server.js
+- npm install
+- node Server.js
