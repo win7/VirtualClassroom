@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> Classroom.IO </title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+	
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="center">
+			<h3 class="title"> Ingrese su nombre </h3>
+			<input class="usernameInput" type="text" maxlength="14" />
+		</div>
+	</div>
+	<div class="split left">
+		<canvas class="whiteboard"></canvas>
+
+		<div class="icon-bar menu">
+			<a class="active" href="#"><i class="fa fa-home"></i></a> 
+			<a href="#" id="palete"><i class="fa fa-tint"></i> <input type="color" id="color" class="hidden"></a> 
+			<a href="#" id="width_increase"><i class="fa fa-plus"></i></a> 
+			<a href="#" id="pencil"><i class="fa fa-pencil"></i></a> 
+			<a href="#" id="width_decrease"><i class="fa fa-minus"></i></a> 
+			<a href="#" id="eraser"><i class="fa fa-eraser"></i></a> 
+			<!-- <button class="btn" ><i class="fa fa-folder"></i></button> -->
+			<a href="#" onclick="openForm()"><i class="fa fa-comments"></i></a> 
+		</div>
+
+		<!-- <div class="centered">
+			<img src="img_avatar2.png" alt="Avatar woman">
+			<h2>Jane Flex</h2>
+			<p>Some text.</p>
+		</div> -->
+
+		<!-- <button class="open-button" >Chat</button> -->
+		<div class="chat-popup" id="myForm">
+			<form class="form-container">
+				<h4>Chat</h4>
+
+				<div class="chatArea">
+					<ul class="messages"></ul>
+				</div>
+				<input class="inputMessage" placeholder="Type here..."/>
+
+				<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+			</form>
+		</div>
+	</div>
+
+	<div class="split right">
+		<div class="centered">
+			<img src="img_avatar.png" alt="Avatar man">
+			<h2>John Doe</h2>
+			<p>Some text here too.</p>
+		</div>
+	</div>
+	<!-- <ul class="pages">
+		<li class="chat page">
+			<div class="chatArea">
+				<ul class="messages"></ul>
+			</div>
+			<input class="inputMessage" placeholder="Type here..."/>
+		</li>
+		<li class="login page">
+			<div class="form">
+				<h3 class="title">What's your nickname?</h3>
+				<input class="usernameInput" type="text" maxlength="14" />
+			</div>
+		</li>
+	</ul> -->
+
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="/main.js"></script>
+
+	<script>
+	function openForm() {
+		document.getElementById("myForm").style.display = "block";
+	}
+
+	function closeForm() {
+		document.getElementById("myForm").style.display = "none";
+	}
+
+	document.getElementById("palete").addEventListener("click", function() {
+		document.getElementById("color").focus();
+		document.getElementById("color").value = "#FFCC00";
+		document.getElementById("color").click();
+	});
+	</script>
+</body>
+</html>
